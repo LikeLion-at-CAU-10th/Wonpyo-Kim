@@ -1,0 +1,19 @@
+h1{
+    border-bottom : dotted 20px blue;
+    color : red;
+    text-align : center;
+}
+
+.info{
+    font-size : 30px;
+    color :blueviolet;
+}
+.contact-info{
+    font-weight : bold;
+    font-size : 40px;
+}
+.table{
+    padding:20px 0 20px 0;
+    border: solid 10px violet;
+
+}
