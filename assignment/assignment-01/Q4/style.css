@@ -1,0 +1,33 @@
+#table{
+    border-radius: 15px;
+    background-color : skyblue;
+    border : solid;
+
+}
+#info{
+    border-radius : 40px;
+    border : solid;
+    background-color : #ecb80e;
+    margin: 20px 100px 20px 100px;
+    text-align : center;
+    padding: 2px 2px 2px 2px;
+    
+}
+#explain{
+    font-size : 35px;
+}
+#footer{
+    background-color : purple;
+    margin-bottom : 0px;
+    
+}
+#footer img{
+    padding : 20px 20px 20px 20px;
+    
+}
+#footer p{
+    font-size : 50px;
+    font-weight : bold;
+    margin-bottom: 0px;
+    
+}
