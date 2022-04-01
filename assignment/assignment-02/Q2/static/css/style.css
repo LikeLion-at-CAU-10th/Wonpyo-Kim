@@ -1,0 +1,169 @@
+body{
+    margin:100px;
+
+}
+
+.container{
+    display : flex;
+    flex-direction : column;
+    justify-content : space-evenly;
+    background-color : rgb(207, 14, 130);
+    width : 1200px;
+    height :1000px;
+}
+
+.layout-search-bar{
+    display :flex;
+    justify-content : center;
+    flex-basis : 12%;
+}
+
+.search-bar{
+    background-color : green;
+    width : 97%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+.layout-nav-bar{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 9%;
+}
+
+.nav-bar1{
+    display : flex;
+    background-color : white;
+    justify-content : center;
+    align-items: center;
+    width : 77%;
+}
+.nav-bar2{
+    display: flex;
+    background-color : blue;
+    justify-content : center;
+    align-items : center;
+    width : 20%;
+}
+.layout-third{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 27%;
+}
+.third-ad{
+    display:flex;
+    background-color : gray;
+    justify-content : center;
+    align-items:center;
+    font-size : 20px;
+    width : 70%;
+}
+
+.third-login{
+    display:flex;
+    justify-content : center;
+    align-items : center;
+    width : 27%;
+    background-color : greenyellow;
+}
+.layout-fourth{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 9%;
+}
+.fourth-nav{
+    display:flex;
+    background-color : white;
+    align-items : center;
+    justify-content: center;
+    width : 70%;
+}
+.fourth-issue{
+    display:flex;
+    background-color : white;
+    align-items: center;
+    justify-content: center;
+    width : 27%
+}
+
+.layout-fifth{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 36%;
+}
+
+.fifth-news{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgb(227, 229, 140);
+    flex-basis : 70%;
+}
+.row1{
+    display:flex;
+    justify-content : space-evenly;
+    flex-basis : 30%;
+    align-items: center;
+    background-color : yellow;
+}
+
+
+.row2{
+    display:flex;
+    justify-content : space-evenly;
+    flex-basis : 30%;
+    align-items: center;
+    background-color : pink;
+}
+
+.row3{
+    display:flex;
+    justify-content : space-evenly;
+    flex-basis : 30%;
+    align-items: center;
+    background-color : khaki;
+}
+
+.news-row-col1{
+    display:flex;
+    flex-basis : 18%;
+    justify-content: center;
+    color:aqua;
+}
+.news-row-col2{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:brown;
+}
+.news-row-col3{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:cadetblue;
+}
+.news-row-col4{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:rgb(42, 87, 132);
+}
+.news-row-col5{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:rgb(97, 205, 120);
+}
+.news-row-col6{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:rgb(14, 51, 233);
+}
+.fifth-ad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:skyblue;
+    flex-basis :27%;
+}
