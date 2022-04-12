@@ -1,0 +1,65 @@
+body{
+    margin : 200px;
+}
+/* 전체 큰 컨테이너에 대하여 */
+.layout-container{
+    background-color : black;
+    display : flex;
+    flex-direction : column;
+    width : 800px;
+    height : 600px;
+    justify-content: space-evenly;
+}
+/* 1층에 title인데 그중 1층에 한하여 height 방향으로 13%*/
+.layout-title{
+    display:flex;
+    justify-content : center;
+    
+    flex-basis : 13%;
+}
+/* 1층 title에 빨간색, width는 거의 가득찰만큼 모든 걸 다 가운데 정렬(width, height)*/
+.title{
+    background-color : red;
+    width : 97%;
+    display : flex;
+    justify-content:center;
+    align-items: center;
+}
+/* 2층에 대하여 height 방향으로 23%*/
+/* 또한 2층에는 여러 요소들이 들어올텐데 이들에 대하여 flex */
+/* + 각각의 내부 flex자식들에 space-evenly하게 */
+.layout-current{
+    display : flex;
+    justify-content: space-evenly;
+
+    flex-basis : 23%;
+}
+/* 4개의 layout-current의 자식들에게 공통으로 width 23%제공 */
+.current{
+    display:flex;
+    width : 23%;
+    background-color : yellow;
+    justify-content : center;
+    align-items: center;
+}
+/* 3층에 height 방향으로 52% */
+/* 내부 요소들에게 flex space-evenly 주고 */
+.layout-popular{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis :52%;
+}
+/* 자식들의 공통 요소들 우선 주고 */
+.popular{
+    display :flex;
+    background-color: green;
+    justify-content : center;
+    align-items: center;
+}
+/* 크기만 조절해주자 */
+.popular1{
+    width :72%;
+}
+.popular2{
+    width : 23%;
+}

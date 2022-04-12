@@ -1,0 +1,184 @@
+body{
+    margin:100px;
+
+}
+/* 전체 큰 contianer에 대하여 우선 flex 컬럼방향으로 쭈우욱 */
+.container{
+    display : flex;
+    flex-direction : column;
+    justify-content : space-evenly;
+    background-color : rgb(207, 14, 130);
+    width : 1200px;
+    height :1000px;
+}
+/* 1층 search바에 대하여 height방향 으로는 12% */
+/* 서치바가 한쪽으로 치우치지않도록 ceneter에 주자! */
+.layout-search-bar{
+    display :flex;
+    justify-content : center;
+    flex-basis : 12%;
+}
+/* 진짜 내부요소를 꾸미고 width 98%로 주면서 */
+/* 양쪽에 1퍼씩만 남겨두는 설계!!!!! */
+/* 내부 요소들은 중심축/교차축 모두 가운데정렬  */
+.search-bar{
+    background-color : green;
+    width : 98%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+}
+/* 2층에 자식 두개 있으니 부모에 flex주자! */
+/* container기준 height방향으로 9%*/
+.layout-nav-bar{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 9%;
+}
+/* 메일 카페 블로그 이쪽에 우선 모두 가운데정렬 주고 */
+/* 총 두개의 자식들에게 각각 width 77% 20%주면서 */
+/* 3개의 공간에 각각 1%씩의 공간을 주면서 끝을 예쁘게 맞추자 */
+.nav-bar1{
+    display : flex;
+    background-color : white;
+    justify-content : center;
+    align-items: center;
+    width : 77%;
+}
+.nav-bar2{
+    display: flex;
+    background-color : blue;
+    justify-content : center;
+    align-items : center;
+    width : 20%;
+}
+/* 3층도 height 쪽으로 27%*/
+.layout-third{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 27%;
+}
+/* width 70 + 27 총 97%로 space 1%씩! */
+.third-ad{
+    display:flex;
+    background-color : gray;
+    justify-content : center;
+    align-items:center;
+    font-size : 20px;
+    width : 70%;
+}
+
+.third-login{
+    display:flex;
+    justify-content : center;
+    align-items : center;
+    width : 27%;
+    background-color : greenyellow;
+}
+/* 2번째 줄처럼 9%만큼 주고 */
+.layout-fourth{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 9%;
+}
+/* 3번째 줄처럼 70, 27 -> 97% width */
+.fourth-nav{
+    display:flex;
+    background-color : white;
+    align-items : center;
+    justify-content: center;
+    width : 70%;
+}
+.fourth-issue{
+    display:flex;
+    background-color : white;
+    align-items: center;
+    justify-content: center;
+    width : 27%
+}
+
+.layout-fifth{
+    display : flex;
+    justify-content : space-evenly;
+    flex-basis : 36%;
+}
+/* 크게 뉴스쪽이랑 광고 쪽에 70 27 똑같이 주되 */
+/* 뉴스 안에 이제 또 여러줄의 뉴스들 넣을거라서 */
+/* display flex에 flex-direction column으로 주자 */
+.fifth-news{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgb(227, 229, 140);
+    flex-basis : 70%;
+}
+/* 각각의 줄에 background-color를 좀 다르게 주고싶어서 분리! */
+.row1{
+    display:flex;
+    flex-basis : 30%;
+    align-items: center;
+    justify-content : space-evenly;
+    background-color : yellow;
+}
+
+/* + 각각의 줄에 height방향으로 center주기 */
+/* + 각각의 줄에 width 방향으로는 공백 똑같게 주기 */
+.row2{
+    display:flex;
+    flex-basis : 30%;
+    align-items: center;
+    justify-content : space-evenly;
+    background-color : pink;
+}
+
+.row3{
+    display:flex;
+    flex-basis : 30%;
+    align-items: center;
+    justify-content : space-evenly;
+    background-color : khaki;
+}
+/* 진짜 내부 요소들에 width방향으로 가운데 정렬! */
+.news-row-col1{
+    display:flex;
+    flex-basis : 18%;
+    justify-content: center;
+    color:aqua;
+}
+.news-row-col2{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:brown;
+}
+.news-row-col3{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:cadetblue;
+}
+.news-row-col4{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:rgb(42, 87, 132);
+}
+.news-row-col5{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:rgb(97, 205, 120);
+}
+.news-row-col6{
+    display:flex;
+    flex-basis : 15%;
+    justify-content: center;
+    color:rgb(14, 51, 233);
+}
+.fifth-ad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:skyblue;
+    flex-basis :27%;
+}
