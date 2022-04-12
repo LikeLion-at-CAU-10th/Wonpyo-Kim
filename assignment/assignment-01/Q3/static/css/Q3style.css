@@ -1,0 +1,22 @@
+body{
+    margin : 10vh;
+}
+h2{
+    text-align : center;
+}
+
+.container{
+    display : flex;
+    justify-content: space-evenly;
+}
+
+img{
+    width : 50vh;
+    height : 50vh;
+}
+
+.p1 p{
+    display :flex;
+    justify-content: center;
+    font-weight : bold;
+}

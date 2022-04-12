@@ -1,0 +1,39 @@
+body{
+    margin : 20vh;
+}
+
+.table{
+    
+    border-radius: 15px;
+    background-color : skyblue;
+    border : solid;
+    width : 400px;
+    height : 532px;
+}
+.info{
+    border-radius : 40px;
+    border : solid;
+    background-color : #ecb80e;
+    margin: 20px 100px 20px 100px;
+    text-align : center;
+    padding: 2px 2px 2px 2px;
+    
+}
+.explain{
+    font-size : 20px;
+}
+
+.footer{
+    display : flex;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    justify-content : space-evenly;
+    background-color: purple;
+}
+
+
+.price{
+    display:flex;
+    align-items: center;
+    font-size : 30px;
+}
