@@ -1,0 +1,208 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    border: 20px solid #111;
+    margin : 20vh;
+    font-family: 'Nanum Pen Script', cursive;
+}
+/* 가장큰 flex의 부모 */
+.container{
+    display : flex;
+    flex-direction: column;
+    
+    border-radius : 10px;
+    flex-wrap : nowrap;
+}
+/* container의 컬럼으로있는 flex중 첫번째 floor */
+/* 다크모드가 있는 것 6%의 컬럼 제공 */
+.first-floor{
+    text-align: right;
+    flex-basis : 6%;
+}
+
+
+
+.label{
+    float:right;
+    background-color: #000;
+    display:flex;
+    align-items: center;
+    border-radius : 50px;
+    justify-content: space-evenly;
+    width :50px;
+    height : 26px;
+    transform : scale(1.5);
+    position : relative;
+}
+
+img{
+    width : 20vh;
+    height : 25vh;
+}
+
+.ball{
+    position : absolute;
+    background-color : white;
+    border-radius: 50%;
+    width : 22px;
+    height : 22px;
+    top: 2px;
+    left : 2px;
+    transition : transform 0.2s ease-out;
+}
+/* :hover : 마우스 올렸을때
+*/
+/* ~면 .label의 .ball이 width + 24px 움직인다. */
+.checkbox:checked + .label .ball{
+    transform : translateX(24px);
+}
+.checkbox {
+    position : absolute;
+    opacity:0;
+}
+body.dark{
+    background : #292c35;
+    border : 20px solid purple;
+}
+
+body.dark p{
+    color : #fff;
+}
+
+
+.fa-moon{
+    color : #f1c40f;
+}
+.fa-sun{
+    color : #f39c12;
+}
+/* 이름 학과 사진, 학과와 학번을 display flex */
+.second-floor{
+    display : flex;
+    justify-content: space-evenly;
+    flex-basis : 12%;
+
+    border : 10px solid purple;
+}
+
+.second-name{
+    border : 5px solid purple;
+    font-size: 100px;
+    color : #f1c40f;
+    display:flex;
+    flex-basis : 42%;
+    justify-content: center;
+    align-items: center;
+   
+}
+.second-picture{
+    border : 5px solid purple;
+    display:flex;
+    flex-basis : 25%;
+    justify-content : center;
+    align-items: center;
+}
+.second-info{
+    border : 5px solid purple;
+    flex-basis : 25%;
+    display :flex;
+    justify-content : center;
+    align-items : center;
+    font-size : 50px;
+    color : #D05DCD;
+}
+.third-floor{
+    display:flex;
+    justify-content : space-evenly;
+    flex-basis : 24%;
+    border : solid 10px #76D2F0
+}
+
+.hobby{
+    border : solid 5px #76D2F0;
+    display:flex;
+    flex-basis: 14%;
+    justify-content: center;
+    align-items: center;
+    font-size:75px;
+}
+.hobby-list{
+    border : solid 5px #76D2F0;
+    display:flex;
+    flex-direction: column;
+    flex-basis : 42%;
+    justify-content : space-evenly;
+    align-items:center;
+    font-size : 50px;
+}
+
+
+.hobby-detail img{
+    width : 60vh;
+    height : 15vh;
+}
+
+.fourth-floor{
+    display : flex;
+    flex-basis : 36%;
+    justify-content: space-evenly;
+    border : solid 10px #ACF082;
+}
+
+.like{
+    border : solid 5px #ACF082;
+    display: flex;
+    flex-basis : 18%;
+    font-size : 75px;
+    justify-content: center;
+    align-items: center;
+}
+.like-detail{
+    flex-basis : 80%;
+    display :flex;
+    flex-direction :column;
+}
+.likeabout{
+    display:flex;
+    flex-basis :32%;
+    justify-content : space-evenly;
+}
+
+.like-image{
+
+    border : solid 5px #ACF082;
+    display:flex;
+    flex-basis : 52%;
+    justify-content: center;;
+}
+
+.like-info{
+    border : solid 5px #ACF082;
+    display:flex;
+    font-size : 75px;
+    justify-content:center;
+    flex-basis :52%;
+    align-items:center;
+}
+.like-image img{
+    align-items:center;
+    width : 30vh;
+    height : 40vh;
+}
+.fifth-floor{
+    flex-basis :12%;
+    display: flex;
+    border: 10px solid #F0EB31;
+    justify-content : space-evenly;
+}
+
+.instagram img{
+    width : 70vh;
+}
+.naver img{
+    width : 70vh;
+}
