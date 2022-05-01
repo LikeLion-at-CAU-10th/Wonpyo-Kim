@@ -1,0 +1,13 @@
+@import "nav.css";
+@import "me.css";
+@import "stack.css";
+@import "history.css";
+p{
+    font-family : 'gulim', 'gothic';
+    font-size : 10vh;
+    text-align : center;
+    border : solid 5px black;
+    border-radius : 20px;
+    color : #2155CD;
+
+}

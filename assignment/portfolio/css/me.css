@@ -1,0 +1,61 @@
+.container{
+    display : flex;
+    justify-content: space-evenly;
+    
+    flex-direction : column;
+    padding : 10vh;
+}
+
+img{   
+    width : 50vh;
+    height : 50vh;
+}
+
+.first-line{
+    display : flex;
+    justify-content: space-evenly;
+}
+
+.first{
+    object-fit: cover;
+    flex-basis:33%;
+    position:relative;
+}
+.first img{
+    transition: all 1s;
+}
+.first img:hover{
+    filter:brightness(30%);
+    transform: rotateY(180deg);
+}
+
+.first1{
+    object-fit: cover;
+    flex-basis:33%;
+    position:relative;
+}
+.first1 img{
+    transition: all 1s;
+}
+.first1 img:hover{
+    filter:brightness(30%);
+    transform: rotateY(180deg);
+}
+.text,.text1{
+    pointer-events: none;
+    z-index:10;
+    display:none;
+    color:white;
+    font-size:1vw;
+    padding: 10px 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50% );
+    
+}
+.text.visible, .text1.visible{
+    display:block;
+}
+
+
