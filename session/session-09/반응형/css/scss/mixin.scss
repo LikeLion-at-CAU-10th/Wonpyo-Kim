@@ -1,0 +1,26 @@
+@import './variable.scss';
+@mixin rt($media) {
+    @if $media == mobile{
+        @media only screen and (max-width : $tabletSize) {@content;}
+    }
+    @else if $media == tablet{
+        @media only screen and (min-width : $tabletSize) and (max-width : $pcSize) {@content;}
+    }
+    @else if $media == pc{
+        @media only screen and (min-width : $pcSize){@content;}
+    }
+}
+.font{
+    @include rt(mobile){
+        font-size : 45px;
+        background-color : red;
+    }
+    @include rt(tablet){
+        font-size : 60px;
+        background-color: red;
+    }
+    @include rt(pc){
+        font-size : 100px;
+        background-color: red;
+    }
+}

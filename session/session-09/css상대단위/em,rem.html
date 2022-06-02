@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>em,rem</title>
+</head>
+<body>
+    <!-- Font-size에 따른 padding 크기 -->
+    <!-- 부모 태그의 크기에 8배 -->
+    <div class = "parent-em" style = "font-size : 8em">
+        Hello
+        <!-- 부모 태그의 크기 0.5배 -->
+        <div class = "child-em" style = "font-size : 0.5em">
+            world
+        </div>
+    </div>
+    <!-- font-size 이용할때 -->
+    <!-- 정해진 기준의 8배크기 -->
+    <div class = "parent-rem" style = "font-size : 8rem">
+        Hello
+        <!-- 정해진 기준의 0.5배 크기 -->
+        <div class = "child-rem" style = "font-size : 0.5rem">
+            world
+        </div>
+    </div>
+    <!-- like x*8*0.5 vs x*0.5 그래서 크기가 다름 -->
+
+
+</body>
+</html>

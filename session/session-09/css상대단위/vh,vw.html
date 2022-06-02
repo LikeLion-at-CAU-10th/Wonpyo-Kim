@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 상대단위</title>
+</head>
+<!-- 조상에게 100퍼센트 -->
+<body style = "height : 100%; width : 100%; margin: 0;">
+    <!-- body 태그의 50퍼센트 -->
+    <div class = "parent-per" style="width :50%; background-color:red;">
+        parent
+        <!-- parent-per의 50퍼센트 -->
+        <div class ="child-per" style ="width : 50%; background-color: aqua;">
+            hello
+        </div>
+    </div>
+    <!-- 100vh 가 높이전체 100wh가 넓이전체 -->
+    <!-- 50이면 50퍼씩 차지하겠네... -->
+    <div class = "parent-vw" style = "width : 50vw; height: 50vh; background-color: blue;">
+        parent
+        <div class ="child-vw" style = "width : 40vw; height : 40vh; background-color: black;">
+            child
+        </div>
+    </div>
+</body>
+</html>
