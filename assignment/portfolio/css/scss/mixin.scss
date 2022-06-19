@@ -1,0 +1,47 @@
+@import './variable.scss';
+@mixin rt($media) {
+    @if $media == mobile{
+        @media only screen and (max-width : $tabletSize) {@content;}
+    }
+    @else if $media == tablet{
+        @media only screen and (min-width : $tabletSize) and (max-width : $pcSize) {@content;}
+    }
+    @else if $media == pc{
+        @media only screen and (min-width : $pcSize){@content;}
+    }
+}
+.nav-name{
+    @include rt(mobile){
+        font-size : 20px;
+        
+    }
+    @include rt(tablet){
+        font-size : 30px;
+       
+    }
+    @include rt(pc){
+        font-size : 40px;
+        
+    }
+}
+
+.nav-me, .nav-stack, .nav-history{
+    @include rt(mobile){
+        font-size : 20px;
+        border : 3px solid black;
+        border-radius : 20px;
+        padding : 10px;
+    }
+    @include rt(tablet){
+        font-size : 30px;
+        border : 3px solid rgb(60, 18, 157);
+        border-radius : 20px;
+        padding : 10px;
+    }
+    @include rt(pc){
+        font-size : 40px;
+        border : 3px solid rgb(11, 229, 98);
+        border-radius : 20px;
+        padding : 10px;
+    }
+}

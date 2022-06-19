@@ -1,0 +1,45 @@
+@media only screen and (max-width: 768px) {
+  .nav-name {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  .nav-name {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .nav-name {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-me, .nav-stack, .nav-history {
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  .nav-me, .nav-stack, .nav-history {
+    font-size: 30px;
+    border: 3px solid #3c129d;
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .nav-me, .nav-stack, .nav-history {
+    font-size: 40px;
+    border: 3px solid #0be562;
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=mixin.css.map */
