@@ -58,12 +58,16 @@ def read_all(request):
 def read_one(request,id):
     if request.method == "GET":
         profile = get_object_or_404(Profile,pk = id)
-        
+        data = {
+            "name" : profile.name,
+            'age' : profile.age,
+            'phone' : profile.phone
+        }
         return JsonResponse({
             "status" : 200,
             "success" : True,
             "message" : "조회 성공",
-            "data" : profile
+            "data" : data
         })
             
     return JsonResponse({
