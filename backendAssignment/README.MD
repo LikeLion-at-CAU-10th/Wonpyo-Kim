@@ -103,3 +103,68 @@ def read_one(request,id):
 
 ![image](https://user-images.githubusercontent.com/69501435/178146319-7e0d7588-b9be-4be4-9cfe-62f12111d7b8.png)
 
+### remove
+```python
+def remove(request, id):
+    if request.method == "POST":
+        profile = get_object_or_404(Profile, pk = id)
+        data = {
+            "name" : profile.name,
+            "age" : profile.age,
+            "phone" : profile.phone
+        }
+        profile.delete()
+        return JsonResponse({
+            "status" : 200,
+            "success" : True,
+            "message" : "삭제 완료",
+            "data" : data
+        })
+    return JsonResponse({
+        "status" : 406,
+        "success" : False,
+        "message" : "POST로만 보내세요",
+        "data" : None
+    })
+```
+post의 요청으로 그 데이터를 우선 찾는다. 그 후 삭제할 데이터를 클라에게 보내주기 위해 data (dict 형)으로 저장해두고 delete로 삭제한다. 
+
+![image](https://user-images.githubusercontent.com/69501435/178146608-69c429e4-3c69-41ba-bcc5-5584b69916c3.png)
+
+### update
+```python
+def update(request, id):
+    if request.method == "POST":
+        profile = get_object_or_404(Profile, pk = id)
+        profile.delete()
+        body = json.loads(request.body)
+        Profile.objects.create(
+            id = id,
+            name = body["name"],
+            age = body['age'],
+            phone = body['phone']
+        )   
+       
+        
+        data = {
+            "name" : profile.name,
+            "age" : profile.age,
+            "phone" : profile.phone
+        }
+        return JsonResponse({
+            "status" : 200,
+            "success" : True,
+            "message" : "update 성공",
+            "data" : data
+        })
+    return JsonResponse({
+        "status" : 406,
+        "success" : False,
+        "message" : "POST로만 보내세요",
+        "data" : None
+    })
+```
+
+아직 좋은 방법이 무엇인지 잘 모르겠다. 그 remove까지 똑같이 진행하고 실제 그 id로 새로 데이터를 create하는 방식으로 코드를 작성했다. update를 한번에 하는 방법이 있을거 같은데 그것은 나중에 배워보고 수정해보겠다.
+
+![image](https://user-images.githubusercontent.com/69501435/178146748-2040485f-3331-4d69-9b2d-a82aced79fa2.png)
