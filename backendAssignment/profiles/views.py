@@ -3,7 +3,6 @@ import json
 
 from django.shortcuts import get_object_or_404
 
-from posts.views import json_response
 from .models import *
 from django.core.serializers import serialize
 # Create your views here.
