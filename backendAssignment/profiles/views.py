@@ -77,7 +77,7 @@ def read_one(request,id):
         "data": None
     })
 def remove(request, id):
-    if request.method == "POST":
+    if request.method == "DELETE":
         profile = get_object_or_404(Profile, pk = id)
         data = {
             "name" : profile.name,
@@ -98,16 +98,14 @@ def remove(request, id):
         "data" : None
     })
 def update(request, id):
-    if request.method == "POST":
+    if request.method == "PATCH":
         profile = get_object_or_404(Profile, pk = id)
-        profile.delete()
         body = json.loads(request.body)
-        Profile.objects.create(
-            id = id,
-            name = body["name"],
-            age = body['age'],
-            phone = body['phone']
-        )   
+        profile.name = body["name"]
+        profile.age = body["age"]
+        profile.phone = body["phone"]
+        
+        profile.save()
        
         
         data = {
