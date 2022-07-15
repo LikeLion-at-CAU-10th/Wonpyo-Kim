@@ -14,7 +14,11 @@
 7. views 연결 및 urls에 path연결
 
 ## 2. week2
-
+1. [create](#create)
+2. [read_all](#read_all)
+3. [read_one](#read_one)
+4. [remove](#remove)
+5. [update](#update)
 ### create
 ```python
 def create(request):
@@ -172,10 +176,13 @@ def update(request, id):
 ![image](https://user-images.githubusercontent.com/69501435/178146748-2040485f-3331-4d69-9b2d-a82aced79fa2.png)
 
 ## 3. week3
+1. [admin](#admin-설정)
+2. [foreign](#foreign_key-설정)
+3. [create](#create_profile_url)
 ### admin 설정
 python manage.py createsuperuser -> admin.py 에 들어가서 admin.site.register(모델명)
 
-### forien_key 설정
+### foreign_key 설정
 우선 나만의 모델링의 작업이 필요했다. profile에 저장된 한사람 기준으로 자신이 기록해두고 싶은 url을 넣을 수 있도록 url 모델을 새로 정의 해봤다.
 models.py 에 다음과 같은 모델링을 추가해보도록 하자.
 ```python
