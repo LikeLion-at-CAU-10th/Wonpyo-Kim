@@ -1,5 +1,7 @@
-
-# week1
+1. [week1](#1-week1)
+2. [week2](#2-week2)
+3. [week3](#3-week3)
+## 1. week1
 
 ![2022-06-27 (7)](https://user-images.githubusercontent.com/69501435/175920511-c94d1990-12df-4c39-ba7e-db89bafded26.png)
 
@@ -11,7 +13,7 @@
 6. settings.py에서 secretkey, installedapps 설정하기
 7. views 연결 및 urls에 path연결
 
-# week2
+## 2. week2
 
 ### create
 ```python
@@ -168,3 +170,68 @@ def update(request, id):
 아직 좋은 방법이 무엇인지 잘 모르겠다. 그 remove까지 똑같이 진행하고 실제 그 id로 새로 데이터를 create하는 방식으로 코드를 작성했다. update를 한번에 하는 방법이 있을거 같은데 그것은 나중에 배워보고 수정해보겠다.
 
 ![image](https://user-images.githubusercontent.com/69501435/178146748-2040485f-3331-4d69-9b2d-a82aced79fa2.png)
+
+## 3. week3
+### admin 설정
+python manage.py createsuperuser -> admin.py 에 들어가서 admin.site.register(모델명)
+
+### forien_key 설정
+우선 나만의 모델링의 작업이 필요했다. profile에 저장된 한사람 기준으로 자신이 기록해두고 싶은 url을 넣을 수 있도록 url 모델을 새로 정의 해봤다.
+models.py 에 다음과 같은 모델링을 추가해보도록 하자.
+```python
+class Url(models.Model):
+    profile_name = models.ForeignKey("Profile", on_delete = models.CASCADE, null = True, blank = True)
+    url_name = models.CharField(max_length = 100, null = True, blank = True)
+    url = models.URLField(max_length = 100)
+```
+즉 Profile의 pk가 Url 의 외래키 참조 대상이고 그 정보는 profile_name에 저장해놓았다.
+1. python manage.py makemigrations
+2. pyhton manage.py migrate 로 합치기!
+
+### create_profile_url
+```python 
+def create_profile_url(request, id):
+    if request.method == "POST":
+        profile_url = get_object_or_404(Profile, pk = id)
+        data = json.loads(request.body)
+        new_url = Url.objects.create(
+            profile_name = profile_url,
+            url_name = data['url_name'],
+            url = data['url']
+        )
+        
+        url_info = {
+            "id" : new_url.id,
+            "url_name" : new_url.url_name,
+            "url" : new_url.url
+        }
+        
+        return JsonResponse({
+            "status" : 200,
+            "success" : True,
+            "message" : "생성 성공!",
+            "data" : url_info
+        })
+    return JsonResponse({
+        "status" : 200,
+        "success" : False,
+        "message" : "POST 요청으로 데이터랑 보내주세요!",
+        "data" : None
+    }) 
+```
+1. 우선 Profile의 외래키이므로 Profile의 pk가 있는 값인지 확인 해야한다.
+```python
+profile_url = get_object_or_404(Profile, pk = id)
+```
+2. data는 body에 json 형태로 들어오므로 그 값을 load
+```python
+data = json.loads(request.body)
+```
+3. 그 후 과정은 Profile의 create 과정이랑 동일
+![image](https://user-images.githubusercontent.com/69501435/179153480-8bd3f757-ff58-4d9c-94ec-e99501d4963e.png)
+Profile의 pk가 5인 친구의 Url을 만드는 과정...
+![image](https://user-images.githubusercontent.com/69501435/179153568-a7ce9e45-873d-4dca-a4ca-63f0b07b24c8.png)
+admin페이지 내부에서 Profile_name(Url model 에서 foreign key로 지정해둔 변수)를 보면 Profile object(5) ---- > Profile의 pk가 5인친구를 foriegn key로 받아왔다는 뜻인것 같다.
+![image](https://user-images.githubusercontent.com/69501435/179153756-f3af7dc8-200f-4fd8-a0e0-3991cdae7602.png)
+수정삭제등을 하기위해 하나더 생성해봤다.!!!
+
