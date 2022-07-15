@@ -179,6 +179,7 @@ def update(request, id):
 1. [admin](#admin-설정)
 2. [foreign](#foreign_key-설정)
 3. [create](#create_profile_url)
+4. [url_read_all](#url_read_all)
 ### admin 설정
 python manage.py createsuperuser -> admin.py 에 들어가서 admin.site.register(모델명)
 
@@ -241,4 +242,40 @@ Profile의 pk가 5인 친구의 Url을 만드는 과정...
 admin페이지 내부에서 Profile_name(Url model 에서 foreign key로 지정해둔 변수)를 보면 Profile object(5) ---- > Profile의 pk가 5인친구를 foriegn key로 받아왔다는 뜻인것 같다.
 ![image](https://user-images.githubusercontent.com/69501435/179153756-f3af7dc8-200f-4fd8-a0e0-3991cdae7602.png)
 수정삭제등을 하기위해 하나더 생성해봤다.!!!
+
+### url_read_all
+
+```python
+def url_all(request,id):
+    if request.method == "GET":
+        profile = get_object_or_404(Profile, pk = id)
+        urls = Url.objects.filter(profile_name = profile.id)        
+        return_data = json.loads(serialize('json',urls))
+        
+        return JsonResponse({
+            "status" : 200,
+            "success" : "성공",
+            "message" : "조회 성공",
+            "data" : return_data
+        })
+    return JsonResponse({
+        "status" : 400,
+        "success" : "실패",
+        "message" : "GET으로 보내라!!",
+        "data" : None
+    })
+```
+1. 이번에도 Profile의 pk가 존재하는지 확인부터 했습니다.
+```python
+profile = get_object_or_404(Profile, pk = id)
+```
+2. 그 내부 url요소들을 긁어온다.
+```python
+urls = Url.objects.filter(profile_name = profile.id) 
+```
+3. 긁어온 urls들을 json으로 만들기
+```python
+return_data = json.loads(serialize('json',urls)
+```
+![image](https://user-images.githubusercontent.com/69501435/179156074-71161f21-4076-4c1e-aaa7-a1eb4075a1f9.png)
 
