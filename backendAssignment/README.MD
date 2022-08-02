@@ -284,7 +284,7 @@ return_data = json.loads(serialize('json',urls)
 
 ## 4. week6
 1. [Class View](#class_view_crud)
-
+2. [User 커스터마이징](#user_customizing)
 ### class_view_crud
 #### 5
 ![스크린샷(33)](https://user-images.githubusercontent.com/69501435/182304529-dbb53772-c199-4f89-ae8c-ee033240614a.png)
@@ -307,3 +307,17 @@ class 변수의 의미를 살펴보자
 urls.py에 url 연결
 ![스크린샷(36)](https://user-images.githubusercontent.com/69501435/182305485-4fdbe749-2f34-4e79-9251-9e54f5191695.png)
 _detail_form에 전달된 데이터를 이용한 html
+
+### user_customizing
+1. 우선 auth에 존재하는 기본 user 데이터 + diary 앱에서 필요한 nickname(CharField), profile(ImageField) 데이터를 저장 할 수 있도록 한다.
+![스크린샷(37)](https://user-images.githubusercontent.com/69501435/182307982-f2b16415-5bb3-44b5-9ee7-e98bf5515b3b.png)
+
+2. admin에 관련 정보를 조회할 수 있도록 admin에 넣어둔다.
+![스크린샷(38)](https://user-images.githubusercontent.com/69501435/182308131-cec3b27c-1e2a-446b-bddf-94783b32b712.png)
+
+3. signup 할 당시에 입력 할 수 있도록 forms.py를 만들어 둔다.
+![스크린샷(39)](https://user-images.githubusercontent.com/69501435/182308252-08d00afb-a1ed-4958-95fd-ce5b56fdba6e.png)
+
+위와 같은 방식을 적용하면 admin페이지에서 확인 가능하다.
+
+![스크린샷(40)](https://user-images.githubusercontent.com/69501435/182308401-f5a22246-6eb4-42b2-a1fd-e2b362cf8d46.png)
