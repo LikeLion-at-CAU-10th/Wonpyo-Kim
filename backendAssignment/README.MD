@@ -1,6 +1,8 @@
 1. [week1](#1-week1)
 2. [week2](#2-week2)
 3. [week3](#3-week3)
+4. [week6](#4-week6)
+
 ## 1. week1
 
 ![2022-06-27 (7)](https://user-images.githubusercontent.com/69501435/175920511-c94d1990-12df-4c39-ba7e-db89bafded26.png)
@@ -279,3 +281,29 @@ return_data = json.loads(serialize('json',urls)
 ```
 ![image](https://user-images.githubusercontent.com/69501435/179156074-71161f21-4076-4c1e-aaa7-a1eb4075a1f9.png)
 
+
+## 4. week6
+1. [Class View](#class_view_crud)
+
+### class_view_crud
+#### 5
+![스크린샷(33)](https://user-images.githubusercontent.com/69501435/182304529-dbb53772-c199-4f89-ae8c-ee033240614a.png)
+
+1.generic view를 만들기 위해 
+```python
+from django.views.generic import CreateView, ListView, DeleteView, UpdateView, DetailView
+```
+이전에는 직접 함수형 view를 만들기 위해 def 로 생성하였다.
+하지만 우리는 장고에서 지원해주는 generic view를 이용하기 위해서 class로 crud를 구현한다.
+
+class 변수의 의미를 살펴보자
+1. model : 어떠한 db를 이용할지 db의 클래스명
+2. success_url : 만약 성공하면 어디로 이동할지에 대한 url
+3. fields : create할 때 입력받을 field들이 무엇인지에 대한 정보
+4. template_name_suffix : 정보들이 어디로 render 될지에 대한 정보
+5. context_object_name : template에 전달될 변수(context)의 이름
+
+![스크린샷(35)](https://user-images.githubusercontent.com/69501435/182305474-8a4aa7dc-4536-4493-8af6-deba4d11dfae.png)
+urls.py에 url 연결
+![스크린샷(36)](https://user-images.githubusercontent.com/69501435/182305485-4fdbe749-2f34-4e79-9251-9e54f5191695.png)
+_detail_form에 전달된 데이터를 이용한 html
